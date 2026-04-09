@@ -1,0 +1,43 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #555;
+  white-space: nowrap;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 1.5px solid #d0c4d7;
+  background: #fff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #522B5B;
+  cursor: pointer;
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+
+.tag:hover {
+  border-color: #522B5B;
+  background: rgba(82, 43, 91, 0.06);
+}
+
+.tag.active {
+  background: #522B5B;
+  border-color: #522B5B;
+  color: #fff;
+}
