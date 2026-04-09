@@ -49,7 +49,9 @@ export default function ProjectModal({ project, onClose }) {
       <div className={styles.modal}>
         <div className={styles.modalHeader}>
           <div className={styles.headerLeft}>
-            <span className={styles.headerIcon}>📁</span>
+            <span className={styles.headerIcon} aria-hidden="true">
+              {project.name.slice(0, 1).toUpperCase()}
+            </span>
             <div>
               <h2 className={styles.modalTitle}>{project.name}</h2>
               <a
@@ -106,7 +108,7 @@ export default function ProjectModal({ project, onClose }) {
           </div>
 
           <div className={styles.readmePanel}>
-            <h3 className={styles.readmeTitle}>📄 README</h3>
+            <h3 className={styles.readmeTitle}>README</h3>
             <div className={styles.readmeContent}>
               <ReactMarkdown>{project.readme}</ReactMarkdown>
             </div>

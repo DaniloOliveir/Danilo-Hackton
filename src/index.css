@@ -1,20 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
+:root {
+  --bg: #f3f2f5;
+  --bg-soft: #faf9fc;
+  --surface: #ffffff;
+  --surface-2: #f2eff6;
+  --text: #2b124c;
+  --text-soft: #6a5a82;
+  --border: #e5ddec;
+  --line: #eee7f4;
+  --brand: #522b5b;
+  --brand-2: #2b124c;
+  --accent: #d8a9f1;
+  --brand-soft: #f4e9fa;
+  --shadow-lg: 0 22px 60px rgba(43, 18, 76, 0.16);
+  --shadow-sm: 0 8px 20px rgba(43, 18, 76, 0.1);
+}
+
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #f7f5fa;
-  color: #1a1a2e;
+  background:
+    radial-gradient(circle at 8% 10%, rgba(216, 169, 241, 0.26), transparent 34%),
+    radial-gradient(circle at 84% 2%, rgba(82, 43, 91, 0.1), transparent 28%),
+    linear-gradient(160deg, #fcfbfd 0%, var(--bg) 48%, #f1f0f4 100%);
+  color: var(--text);
+  min-height: 100vh;
 }
 
 button {
   font-family: inherit;
+}
+
+a {
+  color: inherit;
 }

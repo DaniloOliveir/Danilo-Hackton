@@ -53,7 +53,8 @@ export default function App() {
               className={styles.addBtn}
               onClick={() => setShowAddModal(true)}
             >
-              <span>+</span> Novo Projeto
+              <span aria-hidden="true">+</span>
+              Novo Projeto
             </button>
           </div>
 
@@ -96,7 +97,7 @@ export default function App() {
           </div>
         ) : (
           <div className={styles.empty}>
-            <span className={styles.emptyIcon}>🔍</span>
+            <span className={styles.emptyIcon} aria-hidden="true">○</span>
             <p className={styles.emptyTitle}>Nenhum projeto encontrado</p>
             <p className={styles.emptySubtitle}>
               Tente ajustar os filtros ou cadastrar um novo projeto.

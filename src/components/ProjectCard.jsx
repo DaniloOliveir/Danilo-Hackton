@@ -33,7 +33,9 @@ export default function ProjectCard({ project, onClick }) {
       aria-label={`Ver detalhes de ${project.name}`}
     >
       <div className={styles.top}>
-        <div className={styles.repoIcon}>📁</div>
+        <div className={styles.repoIcon} aria-hidden="true">
+          {project.name.slice(0, 1).toUpperCase()}
+        </div>
         <div className={styles.meta}>
           <h2 className={styles.name}>{project.name}</h2>
           <a
@@ -70,7 +72,7 @@ export default function ProjectCard({ project, onClick }) {
       </div>
 
       <div className={styles.footer}>
-        <span className={styles.readmeLink}>Ver README completo →</span>
+        <span className={styles.readmeLink}>Abrir detalhes</span>
       </div>
     </article>
   );

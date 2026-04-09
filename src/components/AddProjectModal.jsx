@@ -103,7 +103,7 @@ export default function AddProjectModal({ onClose, onAdd }) {
 
           {!loading && (
             <div className={styles.hint}>
-              <span className={styles.hintIcon}>✨</span>
+              <span className={styles.hintIcon} aria-hidden="true">i</span>
               <p>
                 O sistema irá gerar automaticamente o resumo, tags e tecnologias
                 do projeto com base no repositório informado.

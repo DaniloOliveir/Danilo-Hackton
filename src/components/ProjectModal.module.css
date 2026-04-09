@@ -1,8 +1,8 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(43, 18, 76, 0.55);
-  backdrop-filter: blur(3px);
+  background: rgba(43, 18, 76, 0.52);
+  backdrop-filter: blur(5px);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -18,15 +18,16 @@
 
 .modal {
   background: #fff;
-  border-radius: 18px;
+  border-radius: 20px;
   width: 100%;
-  max-width: 900px;
+  max-width: 980px;
   max-height: 90vh;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 20px 60px rgba(43, 18, 76, 0.3);
+  box-shadow: var(--shadow-lg);
   animation: slideUp 0.2s ease;
   overflow: hidden;
+  border: 1px solid #e0d0ec;
 }
 
 @keyframes slideUp {
@@ -38,9 +39,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 28px;
-  border-bottom: 1.5px solid #f0ebf4;
-  background: linear-gradient(135deg, #2B124C 0%, #522B5B 100%);
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+  background: #fcf9ff;
   flex-shrink: 0;
 }
 
@@ -51,63 +52,74 @@
 }
 
 .headerIcon {
-  font-size: 1.8rem;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 .modalTitle {
-  font-size: 1.2rem;
+  font-family: "Manrope", "Plus Jakarta Sans", sans-serif;
+  font-size: 1.14rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text);
   margin: 0 0 4px 0;
 }
 
 .repoUrl {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.7);
+  font-size: 0.76rem;
+  color: #7a6791;
   text-decoration: none;
 }
 
 .repoUrl:hover {
-  color: #fff;
+  color: var(--brand);
   text-decoration: underline;
 }
 
 .closeBtn {
-  background: rgba(255,255,255,0.15);
-  border: 1.5px solid rgba(255,255,255,0.25);
-  color: #fff;
+  background: #fff;
+  border: 1px solid #ddcfee;
+  color: #7f6d97;
   width: 34px;
   height: 34px;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 0.85rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.15s;
+  transition: border-color 0.15s, color 0.15s;
   flex-shrink: 0;
 }
 
 .closeBtn:hover {
-  background: rgba(255,255,255,0.28);
+  border-color: var(--accent);
+  color: var(--brand);
 }
 
 .modalBody {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 300px 1fr;
   overflow: hidden;
   flex: 1;
   min-height: 0;
 }
 
 .infoPanel {
-  padding: 24px;
-  border-right: 1.5px solid #f0ebf4;
+  padding: 20px;
+  border-right: 1px solid var(--line);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  background: #faf8fc;
+  gap: 18px;
+  background: #faf7fd;
 }
 
 .infoSection {
@@ -117,18 +129,18 @@
 }
 
 .infoLabel {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  color: #888;
+  color: #8a78a1;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin: 0;
 }
 
 .summary {
-  font-size: 0.88rem;
-  color: #444;
-  line-height: 1.6;
+  font-size: 0.84rem;
+  color: var(--text-soft);
+  line-height: 1.65;
   margin: 0;
 }
 
@@ -139,7 +151,7 @@
 }
 
 .techBadge {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
   padding: 4px 10px;
   border-radius: 999px;
@@ -153,9 +165,9 @@
 }
 
 .tag {
-  font-size: 0.78rem;
-  color: #522B5B;
-  background: rgba(82, 43, 91, 0.08);
+  font-size: 0.76rem;
+  color: var(--brand);
+  background: #f2e6fb;
   padding: 4px 10px;
   border-radius: 999px;
 }
@@ -167,50 +179,51 @@
 }
 
 .readmeTitle {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: #522B5B;
+  color: #7f6b98;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   margin: 0;
-  padding: 16px 24px 12px;
-  border-bottom: 1px solid #f0ebf4;
+  padding: 14px 20px 12px;
+  border-bottom: 1px solid var(--line);
   background: #fff;
   flex-shrink: 0;
 }
 
 .readmeContent {
-  padding: 24px;
+  padding: 20px;
   overflow-y: auto;
   flex: 1;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   line-height: 1.7;
-  color: #333;
+  color: #3b2a53;
 }
 
 .readmeContent h1 {
-  font-size: 1.4rem;
-  color: #2B124C;
-  border-bottom: 2px solid #f0ebf4;
+  font-family: "Manrope", "Plus Jakarta Sans", sans-serif;
+  font-size: 1.3rem;
+  color: #112026;
+  border-bottom: 1px solid var(--line);
   padding-bottom: 8px;
   margin: 0 0 16px 0;
 }
 
 .readmeContent h2 {
-  font-size: 1.1rem;
-  color: #522B5B;
+  font-size: 1.04rem;
+  color: var(--brand);
   margin: 20px 0 10px 0;
 }
 
 .readmeContent h3 {
   font-size: 0.95rem;
-  color: #2B124C;
+  color: #6a4a88;
   margin: 16px 0 8px 0;
 }
 
 .readmeContent pre {
-  background: #f6f2f9;
-  border: 1px solid #ede8f1;
+  background: #f8f2fd;
+  border: 1px solid #e8dbf3;
   border-radius: 8px;
   padding: 14px 16px;
   overflow-x: auto;
@@ -218,11 +231,11 @@
 }
 
 .readmeContent code {
-  background: #f0ebf4;
+  background: #f1e6fa;
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 0.85em;
-  color: #522B5B;
+  color: var(--brand);
 }
 
 .readmeContent pre code {
@@ -239,17 +252,17 @@
 }
 
 .readmeContent th {
-  background: #f6f2f9;
+  background: #f8f2fd;
   padding: 8px 12px;
   text-align: left;
   font-weight: 600;
-  color: #2B124C;
-  border: 1px solid #ede8f1;
+  color: var(--brand-2);
+  border: 1px solid #e8dbf3;
 }
 
 .readmeContent td {
   padding: 8px 12px;
-  border: 1px solid #ede8f1;
+  border: 1px solid #e8dbf3;
 }
 
 .readmeContent ul,
@@ -262,12 +275,12 @@
 }
 
 .readmeContent a {
-  color: #522B5B;
+  color: var(--brand);
 }
 
 .readmeContent strong {
   font-weight: 700;
-  color: #2B124C;
+  color: var(--brand-2);
 }
 
 @media (max-width: 700px) {
@@ -278,7 +291,7 @@
 
   .infoPanel {
     border-right: none;
-    border-bottom: 1.5px solid #f0ebf4;
+    border-bottom: 1px solid var(--line);
     overflow-y: visible;
   }
 
