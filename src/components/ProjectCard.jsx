@@ -28,7 +28,7 @@ function techBadgeStyle(tech) {
 export default function ProjectCard({ project, onClick }) {
   return (
     <article className={styles.card} onClick={onClick} tabIndex={0}
-      onKeyDown={(e) => e.key === "Enter" && onClick()}
+      onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && onClick()}
       role="button"
       aria-label={`Ver detalhes de ${project.name}`}
     >
