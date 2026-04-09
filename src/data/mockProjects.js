@@ -4,7 +4,7 @@ export const mockProjects = [
     name: "auth-service",
     repoUrl: "https://github.com/org/auth-service",
     summary:
-      "Serviço de autenticação e autorização com suporte a JWT, OAuth2 e controle de acesso baseado em papéis (RBAC).",
+      "Serviço centralizado de autenticação e autorização responsável por gerenciar login via JWT e OAuth2, controle de acesso baseado em papéis (RBAC), integração com provedores externos como Google e GitHub, além de auditoria completa de acessos e sessões ativas na plataforma. O serviço conta com cache distribuído via Redis para otimizar a validação de tokens, suporte a refresh tokens com rotação automática, expiração configurável de sessões e logs estruturados para conformidade com políticas de segurança da organização.",
     tags: ["backend", "segurança", "api"],
     technologies: ["Node.js", "Express", "JWT", "PostgreSQL"],
     readme: `# auth-service
@@ -54,7 +54,7 @@ npm run dev
     name: "dashboard-ui",
     repoUrl: "https://github.com/org/dashboard-ui",
     summary:
-      "Interface de monitoramento em tempo real com gráficos interativos, filtros dinâmicos e suporte a múltiplos temas.",
+      "Interface web de monitoramento em tempo real que exibe métricas da plataforma com gráficos interativos via Chart.js, filtros dinâmicos por período e categoria, suporte a temas claro e escuro, e exportação de relatórios em PDF e CSV para análise offline. Possui sistema de widgets arrastáveis para personalização do layout, notificações em tempo real via WebSocket quando métricas ultrapassam thresholds configurados, e páginas de drill-down para análise detalhada de cada indicador.",
     tags: ["frontend", "ui", "monitoramento"],
     technologies: ["React", "TypeScript", "Chart.js", "Tailwind CSS"],
     readme: `# dashboard-ui
@@ -104,7 +104,7 @@ src/
     name: "notification-worker",
     repoUrl: "https://github.com/org/notification-worker",
     summary:
-      "Worker assíncrono para envio de notificações via e-mail, SMS e push, com suporte a filas e retry automático.",
+      "Worker assíncrono multicanal para envio de notificações por e-mail (SendGrid/SMTP), SMS (Twilio) e push (Firebase FCM), com suporte a filas via RabbitMQ, retry automático em caso de falhas, priorização de mensagens e monitoramento de entregas em tempo real. Inclui sistema de templates dinâmicos para personalização de conteúdo por canal, rate limiting configurável para evitar throttling de provedores, dead-letter queue para mensagens que excederam o número máximo de tentativas, e dashboard de métricas de envio integrado ao Grafana.",
     tags: ["backend", "workers", "mensageria"],
     technologies: ["Python", "Celery", "RabbitMQ", "Redis"],
     readme: `# notification-worker
@@ -146,7 +146,7 @@ celery -A worker worker --loglevel=info
     name: "file-storage-api",
     repoUrl: "https://github.com/org/file-storage-api",
     summary:
-      "API para upload, download e gerenciamento de arquivos com integração ao S3 e CDN, com suporte a múltiplos formatos.",
+      "API RESTful em Go para upload (multipart e stream), download direto e via URLs pré-assinadas, e gerenciamento completo de arquivos com armazenamento na AWS S3, distribuição via CloudFront CDN e metadados persistidos em PostgreSQL para rastreabilidade. Suporta múltiplos buckets por ambiente, validação de tipos MIME, geração automática de thumbnails para imagens, versionamento de arquivos com histórico de alterações, e controle de acesso granular por projeto e usuário com políticas definidas via IAM.",
     tags: ["backend", "api", "storage"],
     technologies: ["Go", "AWS S3", "CloudFront", "PostgreSQL"],
     readme: `# file-storage-api
@@ -187,7 +187,7 @@ go run main.go
     name: "mobile-app",
     repoUrl: "https://github.com/org/mobile-app",
     summary:
-      "Aplicativo móvel multiplataforma para iOS e Android com funcionalidades offline e sincronização em background.",
+      "Aplicativo móvel multiplataforma para iOS e Android desenvolvido com React Native e Expo, com funcionalidades offline via SQLite, sincronização automática em background, notificações push nativas, autenticação biométrica e suporte a temas claro e escuro. O app utiliza Redux Toolkit para gerenciamento de estado global, React Navigation v6 para navegação entre telas, deep linking para integração com outros serviços da organização, e pipeline de CI/CD via EAS Build para distribuição automatizada nas lojas.",
     tags: ["mobile", "frontend", "offline"],
     technologies: ["React Native", "Expo", "SQLite", "Redux"],
     readme: `# mobile-app
@@ -227,7 +227,7 @@ eas build --platform all
     name: "data-pipeline",
     repoUrl: "https://github.com/org/data-pipeline",
     summary:
-      "Pipeline de dados para ingestão, transformação e carregamento (ETL) de grandes volumes com orquestração via Airflow.",
+      "Pipeline ETL para ingestão, transformação e carregamento de grandes volumes de dados, orquestrado pelo Apache Airflow com processamento distribuído via Spark e armazenamento no Google BigQuery, incluindo DAGs configuráveis para vendas, eventos de usuário e tabelas de analytics. Conta com monitoramento de execução via Airflow UI, alertas automáticos por Slack em caso de falhas, particionamento inteligente de tabelas para otimização de custos, data quality checks integrados em cada etapa do pipeline, e documentação automática de linhagem de dados.",
     tags: ["data", "etl", "backend"],
     technologies: ["Python", "Apache Airflow", "Spark", "BigQuery"],
     readme: `# data-pipeline
